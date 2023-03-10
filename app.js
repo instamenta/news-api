@@ -25,7 +25,6 @@ const schema = Joi.object(
 // Define a route handler that uses the schema to validate the request data:
 router.post('/news', async (ctx) => {
     const { body } = ctx.request
-
     try {
         // Validate the request data against the schema
         await schema.validateAsync(body)
@@ -42,6 +41,16 @@ router.post('/news', async (ctx) => {
         ctx.body = { message: err.message }
     }
 })
+router.get('/', async (ctx) => {
+    try {
+      const News = require('./models/news')
+      const news = await News.find()
+      ctx.body = news
+    } catch (err) {
+      ctx.status = 500
+      ctx.body = { message: err.message }
+    }
+  })
 
 app.use(router.routes())
 
