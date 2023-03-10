@@ -25,6 +25,7 @@ const schema = Joi.object(
 // Define a route handler that uses the schema to validate the request data:
 router.post('/news', async (ctx) => {
     const { body } = ctx.request
+    
     try {
         // Validate the request data against the schema
         await schema.validateAsync(body)
@@ -42,15 +43,41 @@ router.post('/news', async (ctx) => {
     }
 })
 router.get('/', async (ctx) => {
+    const { sort, filter } = ctx.request.query;
+  
     try {
-      const News = require('./models/news')
-      const news = await News.find()
-      ctx.body = news
+      const News = require('./models/news');
+      let query = News.find();
+  
+      // Apply sorting if the 'sort' query parameter is present
+      if (sort) {
+        const sortCriteria = {};
+        if (sort === 'date') {
+          sortCriteria.date = 1;
+        } else if (sort === 'title') {
+          sortCriteria.title = 1;
+        }
+        query = query.sort(sortCriteria);
+      }
+  
+      // Apply filtering if the 'filter' query parameter is present
+      if (filter) {
+        const filterCriteria = {
+          $or: [
+            { title: { $regex: filter, $options: 'i' } },
+            { text: { $regex: filter, $options: 'i' } },
+          ],
+        };
+        query = query.find(filterCriteria);
+      }
+  
+      const news = await query.exec();
+      ctx.body = news;
     } catch (err) {
-      ctx.status = 500
-      ctx.body = { message: err.message }
+      ctx.status = 500;
+      ctx.body = { message: err.message };
     }
-  })
+  });
 
 app.use(router.routes())
 
