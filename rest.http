@@ -1,0 +1,15 @@
+
+### Get News 
+GET http://localhost:3000/news
+
+
+### Create News
+POST http://localhost:3000/news
+Content-Type: application/json
+
+{
+
+    "title": "News Title", 
+    "shortDescription" : "News Description", 
+    "text" : "BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT "
+}

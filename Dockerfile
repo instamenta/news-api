@@ -18,9 +18,10 @@ COPY config.js .
 
 # Set the environment variable for the MongoDB connection URL
 ENV MONGODB_URL mongodb://mongo:27017/news-app
+# /news-app
 
 # Expose the port that the application listens on (default is 3000)
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "start"]
+CMD [ "node", "./app.js" ]
