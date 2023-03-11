@@ -24,9 +24,9 @@ It accepts several query parameters that can be used to customize the returned r
 * keyword: a keyword to search for in the news article's title or body
 * page: the page number to fetch (e.g. 1, 2, etc.)
 * pageSize: the number of news articles to fetch per page
-
+```
 returns a response containing the requested news articles and the total count of articles matching the query.
-
+```
 Here is an example of how to call this endpoint
 
 GET 'http://localhost:3000/news?sortBy=title&sortOrder=asc&keyword=breaking&page=1&pageSize=10' 
