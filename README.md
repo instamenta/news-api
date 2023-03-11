@@ -11,9 +11,9 @@ A simple web application for managing news articles.
 
 ### Get News
 Retrieve a list of news articles.
-
+```
 GET http://localhost:3000/news
-
+```
 ### Get News with Custom Query
 
 endpoint is used to fetch all news articles from the database. 
