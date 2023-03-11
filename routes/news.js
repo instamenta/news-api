@@ -1,4 +1,4 @@
-const Router = require('koa-router')
+const Router = require('@koa/router')
 const { getAllNews, getNewsById, createNews, updateNews, deleteNews } = require('../controllers/news')
 
 const router = new Router()

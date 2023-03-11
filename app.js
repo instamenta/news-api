@@ -1,6 +1,5 @@
 const Koa = require('koa')
 const bodyParser = require('koa-bodyparser')
-const Router = require('@koa/router')
 const cors = require('@koa/cors')
 const mongoose = require('mongoose')
 const router = require('./routes/news')
@@ -14,14 +13,12 @@ app.use(cors())
 app.use(bodyParser())
 
 // Set up database connection
-mongoose.connect(config.dbConnectionString, 
-  {
+mongoose.connect(config.dbConnectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-})
-  .then(() => console.log('Connected to MongoDB'))
+  bufferCommands: false,
+  
+}).then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error(err))
 
 // Set up routes
