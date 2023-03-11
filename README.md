@@ -118,7 +118,28 @@ To start the application, run:
 node ./app.js
 ```
 ## Test
-To run tests, run:
+
+To run the test suite for this application, follow these steps:
+
+1. Start the application containers:
 ```
-npm test
+docker-compose up --build
 ```
+
+2. Open a new terminal window and navigate to the project directory:
+```
+cd news-website-app
+```
+3. Run the following command to execute the test suite:
+```
+docker-compose run app npm test
+```
+This command will start a new container and run the test suite inside it.
+
+
+## Troubleshooting
+If you encounter any issues while running this application, try the following steps:
+
+* Make sure that Docker and Docker Compose are installed and running correctly on your computer.
+* Check the application logs for any error messages or stack traces.
+* Try stopping and restarting the application containers using the `docker-compose down` and `docker-compose up`
