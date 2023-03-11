@@ -31,6 +31,10 @@ Here is an example of how to call this endpoint
 ```
 GET 'http://localhost:3000/news?sortBy=title&sortOrder=asc&keyword=breaking&page=1&pageSize=10' 
 ```
+
+This would fetch the first page of news articles containing the keyword "breaking",
+sorted by title in ascending order, with a page size of 10 articles per page.
+
 ### Create News
 
 Create a new news article.
