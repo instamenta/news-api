@@ -54,11 +54,12 @@ Congrats now you got a running container Docker Stack of two containers
 "db-1" and "app-1".
 
 
-## to Test the News Api:
+## to Test the News Api with the REST Client extension: 
 
 the ./rest.http file is used with the REST Client extension for VS Code to Quicly test the DataBase
 
 ## API Documentation
+
 ### Get News
 Retrieve a list of news articles.
 
