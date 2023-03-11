@@ -6,6 +6,15 @@ A simple web application for managing news articles.
 
 * Node.js
 * MongoDB
+* 
+## API Endpoints
+The following endpoints are available:
+
+* GET /news - Get a list of news articles
+* POST /news - Create a new news article
+* GET /news/:id - Get a specific news article
+* PUT /news/:id - Update a specific news article
+* DELETE /news/:id - Delete a specific news article
 
 ## API Documentation
 
@@ -27,7 +36,7 @@ It accepts several query parameters that can be used to customize the returned r
 
 returns a response containing the requested news articles and the total count of articles matching the query.
 
-Here is an example of how to call this endpoint
+Here is an example of how to call this endpoint:
 ```
 GET 'http://localhost:3000/news?sortBy=title&sortOrder=asc&keyword=breaking&page=1&pageSize=10' 
 ```
