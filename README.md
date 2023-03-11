@@ -3,9 +3,10 @@
 A simple web application for managing news articles.
 
 ## Requirements
+Before you can run this application, you need to have the following software installed on your computer:
 
-* Node.js
-* MongoDB
+* Docker
+* Docker Compose
 
 ## Usage
 Once the application is running, you can access it by visiting http://localhost:3000 in your web browser.
