@@ -6,7 +6,10 @@ A simple web application for managing news articles.
 
 * Node.js
 * MongoDB
-* 
+
+## Usage
+Once the application is running, you can access it by visiting http://localhost:3000 in your web browser.
+
 ## API Endpoints
 The following endpoints are available:
 
@@ -81,7 +84,34 @@ DELETE http://localhost:3000/news/:id
 ## to Test the News Api with the REST Client extension: 
 
 the ./rest.http file is used with the REST Client extension for VS Code to Quicly test the DataBase
+----------------
+## Setup
+To set up this application, follow these steps:
 
+1. Clone the repository:
+
+```
+git clone https://github.com/<username>/news-website-app.git
+```
+2. Navigate to the project directory:
+
+```
+cd news-website-app
+```
+3. Create a new file named .env in the project directory, and add the following line:
+
+```
+MONGODB_URI=mongodb://db:27017/news-app
+```
+This environment variable specifies the URI of the MongoDB database.
+
+4. Run the following command to start the application:
+
+```
+docker-compose up --build
+```
+This command will build and start the application containers.
+  ------------------------
 ## to Build with Docker: 
 
 To build the Docker image for your app, open a terminal in the root directory of 
