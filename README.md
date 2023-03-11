@@ -1,15 +1,57 @@
-# news-website
- 
-To build the Docker image for your app, open a terminal in the root directory of your project and run the following command:
+# News-Api
 
-docker build -t news-website .
+A simple web application for managing news articles.
 
-This will build a Docker image named news-website using the Dockerfile in the current directory (.). Once the image is built, you can run the Docker container using the docker run command:
 
-docker run -p 3000:3000 news-website
+## Requirements
+* Node.js
+* MongoDB
 
-This will start the container and forward traffic from port 3000 in the container to port 3000 on your local machine. You can then access your Koa application by visiting http://localhost:3000 in your web browser.
 
-With this setup, when you run the Docker container, you can pass the MONGODB_URL environment variable to the container using the -e flag:
+## to Build the Docker: 
 
-docker run -p 3000:3000 -e MONGODB_URL=mongodb://mongo:27017/news-app my-news-app
+To build the Docker image for your app, open a terminal in the root directory of 
+your project and run the following command ( it's important to keep the dot "." at the end ):
+
+docker build -t news-api .
+
+This will build a Docker image named news-api using the Dockerfile in the current directory (.). 
+Once the image is built, you can run the Docker container using the docker run command:
+
+docker-compose up
+
+Congrats now you got a running container Docker Stack of two containers 
+"db-1" and "app-1".
+
+
+## to Test the News Api:
+
+the ./rest.http file is used with the REST Client extension for VS Code to Quicly test the DataBase
+
+### Get News
+GET http://localhost:3000/news
+
+### Create News
+POST http://localhost:3000/news
+Content-Type: application/json
+
+{
+"title": "News Title",
+"shortDescription": "News Description",
+"text": "Text"
+}
+
+### Get Single News
+GET http://localhost:3000/news/:id
+
+### Update News
+PUT http://localhost:3000/news/:id
+Content-Type: application/json
+{
+"title": "Updated News Title",
+"shortDescription": "Updated News Description",
+"text": "UPDATED Text"
+}
+
+### Delete News
+DELETE http://localhost:3000/news/:id

@@ -1,15 +1,27 @@
-
-### Get News 
+### Get News
 GET http://localhost:3000/news
-
 
 ### Create News
 POST http://localhost:3000/news
 Content-Type: application/json
 
 {
-
-    "title": "News Title", 
-    "shortDescription" : "News Description", 
-    "text" : "BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT BIG TEXT "
+"title": "News Title",
+"shortDescription": "News Description",
+"text": "Text"
 }
+
+### Get Single News
+GET http://localhost:3000/news/:id
+
+### Update News
+PUT http://localhost:3000/news/:id
+Content-Type: application/json
+{
+"title": "Updated News Title",
+"shortDescription": "Updated News Description",
+"text": "UPDATED Text"
+}
+
+### Delete News
+DELETE http://localhost:3000/news/:id
