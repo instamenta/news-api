@@ -172,7 +172,7 @@ cd news-website-app
 ```
 docker-compose run app npm test
 ```
-This command will start a new container and run the test suite inside it.
+* This command will start a new container and run the test suite inside it.
 
 
 ## Troubleshooting
