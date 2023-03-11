@@ -37,7 +37,7 @@ It accepts several query parameters that can be used to customize the returned r
 * page: the page number to fetch (e.g. 1, 2, etc.)
 * pageSize: the number of news articles to fetch per page
 
-returns a response containing the requested news articles and the total count of articles matching the query.
+* returns a response containing the requested news articles and the total count of articles matching the query.
 
 Here is an example of how to call this endpoint:
 ```
@@ -82,9 +82,8 @@ DELETE http://localhost:3000/news/:id
 ```
 
 ## to Test the News Api with the REST Client extension: 
-
 the ./rest.http file is used with the REST Client extension for VS Code to Quicly test the DataBase
-----------------
+
 ## Setup
 To set up this application, follow these steps:
 
@@ -110,8 +109,8 @@ This environment variable specifies the URI of the MongoDB database.
 ```
 docker-compose up --build
 ```
-This command will build and start the application containers.
-  ------------------------
+* This command will build and start the application containers.
+
 ## to Build with Docker: 
 
 To build the Docker image for your app, open a terminal in the root directory of 
