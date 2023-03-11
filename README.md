@@ -3,6 +3,7 @@
 A simple web application for managing news articles.
 
 ## Requirements
+
 * Node.js
 * MongoDB
 
@@ -112,5 +113,3 @@ docker-compose up
 
 Congrats now you got a running container Docker Stack of two containers 
 "db-1" and "app-1".
-
-
